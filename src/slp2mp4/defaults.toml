@@ -16,3 +16,14 @@ volume = 25
 parallel = 0
 prepend_directory = true
 youtubify_names = true
+
+[runtime.name_replacements]
+"-" = "–"
+"(" = "⟮"
+")" = "⟯"
+"_" = "＿"
+"<" = "＜"
+">" = "＞"
+"." = "．"
+"/" = "／"
+":" = "："

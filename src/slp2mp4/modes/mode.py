@@ -26,13 +26,7 @@ class Mode:
         if prefix:
             name = f"{prefix} {name}"
         if self.conf["runtime"]["youtubify_names"]:
-            name = name.replace("-", "–")
-            name = name.replace("(", "⟮")
-            name = name.replace(")", "⟯")
-            name = name.replace("_", "＿")
-            name = name.replace("<", "＜")
-            name = name.replace(">", "＞")
-            name = name.replace(".", "．")
+            name = name.translate(self.conf["runtime"]["name_replacements"])
         name = name.removesuffix(".slp")
         name += ".mp4"
         sanitized = self.output_directory / pathvalidate.sanitize_filename(name)

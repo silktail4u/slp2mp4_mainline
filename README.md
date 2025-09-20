@@ -104,7 +104,20 @@ The default settings can be found [here][default-settings].
 
 - `parallel`: Number of parallel processes (0 = auto-detect CPU cores)
 - `prepend_directory`: Prepend the parent directory info
-- `youtubify_names`: Replace some characters in file names for YouTube uploads
+- `youtubify_names`: Enable `name_replacements` (below)
+- `name_replacements`: A mapping of characters to replace in titles; intended  for
+  uploads to websites (e.g. YouTube) that remove or prohibit certain characters
+  in titles
+
+    - To disable entirely, set `youtubify_names` to `false`
+    - To disable for specific characters, have its assignment be to itself, e.g.
+
+      ```toml
+      [runtime.name_replacements]
+      "-" = "-"
+      ```
+
+    - Replacements are only per-character. In other words, you cannot replace a single character with multiple or vice-versa. The only exception to this is if you want a character removed entirely from the title, in which case you assign it to `""`.
 
 ### Example Configuration
 
