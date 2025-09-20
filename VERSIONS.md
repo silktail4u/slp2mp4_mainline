@@ -2,6 +2,8 @@
 
 ## In-progress
 
+## 3.0.7
+
 - Various improvements around output name handling:
     - Added `runtime.name_replacements` to allow users to have arbitrary
       replacements for title names.
