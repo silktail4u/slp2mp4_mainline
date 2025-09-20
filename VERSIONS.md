@@ -9,6 +9,7 @@
     - Use ` ` instead of `_` for path joining.
     - In single mode, only consider files ending with `.slp`.
     - In zip mode, handle nested zip files better.
+- Fixed bug preventing usage of directory mode
 - Ensure that config paths that are expected to be files are actually files
 
 ## 3.0.6
