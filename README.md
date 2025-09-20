@@ -108,14 +108,16 @@ The default settings can be found [here][default-settings].
 
 ### Example Configuration
 
+Windows:
+
 ```toml
 [paths]
-ffmpeg = "ffmpeg"
+ffmpeg = "~/Downloads/ffmpeg-2025-01-27-git-959b799c8d-essentials_build/bin/ffmpeg.exe"
 slippi_playback = "~/AppData/Roaming/Slippi Launcher/playback/Slippi Dolphin.exe"
-ssbm_iso = "~/Games/Melee.iso"
+ssbm_iso = "~/Documents/iso/ssbm.iso"
 
 [dolphin]
-backend = "OGL"
+backend = "D3D12"
 resolution = "1080p"
 bitrate = 16000
 
@@ -126,16 +128,16 @@ volume = 25
 parallel = 0
 ```
 
-or on Windows:
+Linux:
 
 ```toml
 [paths]
-ffmpeg = "~/Downloads/ffmpeg-2025-01-27-git-959b799c8d-essentials_build/bin/ffmpeg.exe"
-slippi_playback = "~/AppData/Roaming/Slippi Launcher/playback/Slippi Dolphin.exe"
-ssbm_iso = "~/Documents/iso/ssbm.iso"
+ffmpeg = "ffmpeg"
+slippi_playback = "~/.config/Slippi Launcher/playback/Slippi_Playback-x86_64.AppImage"
+ssbm_iso = "~/Games/Melee.iso"
 
 [dolphin]
-backend = "D3D12"
+backend = "OGL"
 resolution = "1080p"
 bitrate = 16000
 
