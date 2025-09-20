@@ -199,6 +199,14 @@ class ConfigDialog(tk.Toplevel):
         prepend_box = ttk.Checkbutton(prepend_frame, variable=self.prepend_var)
         prepend_box.pack(side="left", padx=5)
 
+        # Preserve directory structure
+        preserve_dir_frame = ttk.Frame(runtime_frame)
+        preserve_dir_frame.pack(side="top", pady=5)
+        ttk.Label(preserve_dir_frame, text="Preserve directory structure?").pack(side="left", padx=5)
+        self.preserve_dir_var = tk.BooleanVar()
+        preserve_dir_box = ttk.Checkbutton(preserve_dir_frame, variable=self.preserve_dir_var)
+        preserve_dir_box.pack(side="left", padx=5)
+
         # Youtubify names
         youtubify_frame = ttk.Frame(runtime_frame)
         youtubify_frame.pack(side="top", pady=5)
@@ -257,6 +265,7 @@ class ConfigDialog(tk.Toplevel):
         self.ffmpeg_args_var.insert(tk.END, str(self.config["ffmpeg"]["audio_args"]))
         self.parallel_var.set(int(self.config["runtime"]["parallel"]))
         self.prepend_var.set(bool(self.config["runtime"]["prepend_directory"]))
+        self.preserve_dir_var.set(bool(self.config["runtime"]["preserve_directory_structure"]))
         self.youtubify_var.set(bool(self.config["runtime"]["youtubify_names"]))
         self.name_replacements_var.delete("1.0", tk.END)
         self.name_replacements_var.insert(tk.END, pprint.pformat(self.config["runtime"]["name_replacements"]))
@@ -283,6 +292,7 @@ class ConfigDialog(tk.Toplevel):
             "runtime": {
                 "parallel": self.parallel_var.get(),
                 "prepend_directory": self.prepend_var.get(),
+                "preserve_directory_structure": self.preserve_dir_var.get(),
                 "youtubify_names": self.youtubify_var.get(),
                 "name_replacements": name_replacements_args,
             },

@@ -104,6 +104,8 @@ The default settings can be found [here][default-settings].
 
 - `parallel`: Number of parallel processes (0 = auto-detect CPU cores)
 - `prepend_directory`: Prepend the parent directory info
+- `preserve_directory_structure`: Make video outputs match the input structure
+  instead of being "flat"
 - `youtubify_names`: Enable `name_replacements` (below)
 - `name_replacements`: A mapping of characters to replace in titles; intended  for
   uploads to websites (e.g. YouTube) that remove or prohibit certain characters
