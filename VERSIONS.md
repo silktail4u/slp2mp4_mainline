@@ -4,6 +4,7 @@
 
 - Add build that bundles ffmpeg with the install (thanks to @ianwal for contributing!)
 - Simplified `runtime.name_replacements` implementation
+- The "Stop" button in the GUI now actually works :)
 
 ## 3.0.7
 
