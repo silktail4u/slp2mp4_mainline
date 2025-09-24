@@ -12,7 +12,6 @@ import enum
 import pathlib
 import tempfile
 import multiprocessing
-import time
 
 from slp2mp4.dolphin.runner import DolphinRunner
 from slp2mp4.ffmpeg import FfmpegRunner
@@ -33,8 +32,7 @@ def render_and_concat(
         i: executor.submit(render, fr, dr, i)
         for fr, dr, i in zip(ffmpeg_runners, dolphin_runners, output.inputs)
     }
-    while not all(future.done() for future in futures.values()):
-        time.sleep(1)
+    concurrent.futures.wait(futures.values())
     tmp_paths = [futures[i].result() for i in output.inputs]
     concat(conf, output.output, tmp_paths)
 
