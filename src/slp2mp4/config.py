@@ -62,6 +62,11 @@ def _parse_from_list(key, input_list):
     return (key in input_list, key)
 
 
+def _parse_dict_of_bools(dict_of_bools):
+    all_good = all(isinstance(value, bool) for value in dict_of_bools.values())
+    return (all_good, dict_of_bools)
+
+
 def _parse_int(int_str):
     # Convert to string first to catch int -> floats
     return _parse_to_type(str(int_str), int)
@@ -102,6 +107,8 @@ _TRANSFORMERS = {
         "backend": _parse_backend,
         "resolution": _parse_resolution,
         "bitrate": _parse_int,
+        # Not specifying gecko codes allows support for future ones with no changes
+        "gecko_codes": _parse_dict_of_bools,
     },
     "ffmpeg": {
         "audio_args": _parse_str,
