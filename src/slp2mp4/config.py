@@ -33,6 +33,18 @@ DOLPHIN_BACKENDS = [
     "Vulkan",
 ]
 
+# From https://github.com/project-slippi/slippi-ssbm-asm/blob/5fe022edae0382832caeeee859915160338c8043/playback.json#L292
+GECKO_CODES = [
+    "$Optional: Show Player Names",
+    "$Optional: Game Music OFF",
+    "$Optional: Widescreen 16:9",
+    "$Optional: Disable Screen Shake",
+    "$Optional: Hide HUD",
+    "$Optional: Hide Waiting For Game",
+    "$Optional: Enable Develop Mode",
+    "$Optional: Lagless FoD",
+]
+
 
 def _parse_to_type(string, totype):
     try:
