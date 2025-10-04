@@ -28,3 +28,5 @@ preserve_directory_structure = false
 "." = "．"
 "/" = "／"
 ":" = "："
+"'" = "＇"
+"\\"" = "＂"
