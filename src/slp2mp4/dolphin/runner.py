@@ -65,7 +65,7 @@ class DolphinRunner:
                         self.video_backend,
                     ),
                     (
-                        "--slippi-input",
+                        "-i",
                         comm_file,
                     ),
                     ("--hide-seekbar",),
