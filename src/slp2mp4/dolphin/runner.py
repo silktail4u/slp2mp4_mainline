@@ -70,14 +70,9 @@ class DolphinRunner:
                     ),
                     ("--hide-seekbar",),
                     (
-                        "--output-directory",
-                        dump_dir,
-                    ),
-                    (
                         "--user",
                         userdir,
                     ),
-                    ("--cout",),
                 )
                 dolphin_args = util.flatten_arg_tuples(args)
                 try:
