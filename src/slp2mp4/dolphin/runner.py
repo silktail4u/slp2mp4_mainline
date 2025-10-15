@@ -60,7 +60,6 @@ class DolphinRunner:
                         "--exec",
                         self.ssbm_iso,
                     ),
-                    ("--batch",),
                     (
                         "--video_backend",
                         self.video_backend,
