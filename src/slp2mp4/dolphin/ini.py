@@ -52,7 +52,7 @@ def make_dolphin_file(userdir: pathlib.Path):
             "RenderWindowAutoSize": "True",
         },
     }
-    filename = userdir.joinpath("Config", "Dolphin.ini")
+    filename = userdir.joinpath("squashfs-root","usr","bin","Sys","Config", "Dolphin.ini")
     with make_ini_file(filename, settings) as (name, handle):
         yield name
 
@@ -67,7 +67,7 @@ def make_gfx_file(userdir: pathlib.Path, user_settings):
         },
     }
     util.update_dict(settings, user_settings)
-    filename = userdir.joinpath("Config", "GFX.ini")
+    filename = userdir.joinpath("squashfs-root","usr","bin","Sys","Config", "GFX.ini")
     with make_ini_file(filename, settings) as (name, handle):
         yield name
 
@@ -76,7 +76,7 @@ def make_gfx_file(userdir: pathlib.Path, user_settings):
 def make_gal_file(userdir: pathlib.Path, user_settings):
     settings = {}
     util.update_dict(settings, user_settings)
-    filename = userdir.joinpath("GameSettings", "GAL.ini")
+    filename = userdir.joinpath("squashfs-root","usr","bin","Sys","GameSettings", "GAL.ini")
     with make_ini_file(filename, settings) as (name, handle):
         yield name
 
@@ -88,7 +88,7 @@ def make_hotkeys_file(userdir: pathlib.Path):
             "Device": "/0/",
         }
     }
-    filename = userdir.joinpath("Config", "Hotkeys.ini")
+    filename = userdir.joinpath("squashfs-root","usr","bin","Sys","Config", "Hotkeys.ini")
     with make_ini_file(filename, settings) as (name, handle):
         yield name
 
@@ -97,6 +97,6 @@ def make_hotkeys_file(userdir: pathlib.Path):
 def make_gecko_file(userdir: pathlib.Path, user_gecko):
     settings = {"Gecko": {}}
     util.update_dict(settings, user_gecko)
-    filename = userdir.joinpath("GameSettings", "GALE01.ini")
+    filename = userdir.joinpath("squashfs-root","usr","bin","Sys","GameSettings", "GALE01.ini")
     with make_ini_file(filename, settings) as (name, handle):
         yield name
